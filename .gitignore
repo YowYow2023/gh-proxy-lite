@@ -1,0 +1,10 @@
+# 含真实 Secret 的本地变量文件（勿提交）
+.dev.vars
+
+# Node / Wrangler
+node_modules/
+.wrangler/
+
+# 系统杂项
+.DS_Store
+Thumbs.db

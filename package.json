@@ -1,0 +1,13 @@
+{
+  "name": "gh-proxy-lite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight GitHub acceleration proxy — a single-file Cloudflare Worker. Zero config, zero bindings, zero build step.",
+  "cloudflare": {
+    "bindings": {
+      "GITHUB_TOKEN": {
+        "description": "Optional. A GitHub Personal Access Token raises API rate limits from 60/h to 5000/h. Leave empty if you only proxy public repositories."
+      }
+    }
+  }
+}

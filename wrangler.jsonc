@@ -1,0 +1,19 @@
+// Wrangler 配置文件
+// 一键部署（Deploy to Cloudflare 按钮）与命令行 `npx wrangler deploy` 都使用此文件。
+// 文档: https://developers.cloudflare.com/workers/wrangler/configuration/
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  // 部署后的 Worker 名称（一键部署时用户可自行修改）
+  "name": "gh-proxy-lite",
+
+  // 入口文件
+  "main": "index.js",
+
+  // 兼容性日期（Cloudflare 建议：设为你部署时的近期日期）
+  "compatibility_date": "2026-10-09"
+
+  // 本 Worker 无任何资源绑定（KV / D1 / R2 均不需要），
+  // 也不定义 GITHUB_TOKEN —— 它是可选 Secret，请在控制台
+  // Settings → Variables and Secrets 中配置，或参考 .dev.vars.example。
+}

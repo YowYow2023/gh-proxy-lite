@@ -1,0 +1,16 @@
+# 可选配置：GitHub Personal Access Token
+#
+# 作用：将 api.github.com 的请求限额从 60 次/小时 提升到 5000 次/小时。
+# 只加速公开仓库的话，不需要 Token，本文件可留空或删除。
+#
+# 生成方法（GitHub 网页）：
+#   Settings → Developer settings → Personal access tokens → 生成一个
+#   只读 Token 即可，不需要勾选任何额外权限。
+#
+# 两种使用方式：
+#   1. 本地开发：把本文件复制为 .dev.vars（.gitignore 已忽略）并填入 Token
+#   2. 线上部署：Cloudflare 控制台 → 你的 Worker → Settings →
+#      Variables and Secrets → Add，Type 选 Secret，
+#      Name 填 GITHUB_TOKEN，Value 填 Token
+
+GITHUB_TOKEN=
