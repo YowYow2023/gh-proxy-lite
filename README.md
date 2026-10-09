@@ -29,35 +29,41 @@
 
 ## ✋ 手动部署（不想点按钮也行）
 
-1. 登录 [dash.cloudflare.com](https://dash.cloudflare.com)
-2. 左侧菜单找到 **Compute & AI（计算与 AI）** 分组 → **Workers & Pages**
-3. 点右上角 **Create application（创建应用程序）**，选 **Create Worker** 卡片
-4. 修改名称（比如 `gh-proxy-lite`）→ 点击 **Deploy（部署）**
-5. 部署成功后点击 **Edit Code（编辑代码）**
-6. 删掉编辑器里的默认代码，粘贴本仓库 [`index.js`](index.js) 的全部内容
-7. 点击右上角 **Deploy（部署）**
-8. 打开 `https://<你的Worker名>.workers.dev` —— 看到首页即成功
+> 只需浏览器，全程约 3 分钟；免费账号即可，无需信用卡。
+
+1. 注册并登录 [Cloudflare 控制台](https://dash.cloudflare.com)
+2. 在左侧菜单点击 **Workers & Pages**（入口位于 **Compute & AI** 分组下；新版控制台可能改叫 **Compute (Workers)**，是同一个地方；实在找不到就直接打开[官方直达链接](https://dash.cloudflare.com/?to=/:account/workers-and-pages)）
+3. 点右上角 **Create application（创建应用程序）** → 会出现 5 个选项：**Connect GitHub**、**Connect GitLab**、**Start with Hello World**、**Select a template**、**Upload your static files**，选 **Start with Hello World**（即创建一个带默认代码的空白 Worker，下一步把代码整个换成我们的）；如果你看到的还是旧版的 **Create Worker** 卡片，直接点它即可
+4. 在命名页把默认的随机名（形如 `bold-leaf-1234`）改成好记的名字（例如 `gh-proxy-lite`）→ 点击 **Deploy（部署）**
+5. 部署完成后点击 **Edit Code（编辑代码）** 进入编辑器；没看到这个按钮就回到 Workers & Pages 列表，点你的 Worker 名进入，再点右上角 **Edit Code**
+6. 在编辑器里按 `Ctrl+A`（Mac 为 `Cmd+A`）全选默认代码，删除
+7. 打开本仓库的 [`index.js`](index.js) 文件页，点右上角 **Raw** 按钮旁的复制图标 **Copy raw contents（复制原始文件）** 复制全部代码（或点 Raw 打开后 `Ctrl+A` → `Ctrl+C`），粘贴到编辑器
+8. 点编辑器右上角 **Deploy（部署）**，等待出现部署成功的提示（若弹出确认窗口，再点一次 Deploy 确认即可）
+9. 回到 Workers & Pages 列表，点你的 Worker 名 → **Settings（设置）→ Domains & Routes（域与路由）**，可以看到你的专属地址，形如 `https://gh-proxy-lite.你的子域名.workers.dev`——注意中间一段是注册账号时自动分配的**账号子域名**，所以网址不是只有 `workers.dev`
+10. 在浏览器打开这个地址，看到本项目的首页即部署成功 🎉
 
 ## 📖 使用
+
+> 下文示例统一用 `https://gh-proxy-lite.你的子域名.workers.dev` 代表你的代理地址。请替换成你自己的完整域名（形如 `https://gh-proxy-lite.abc123.workers.dev`，可在 Worker 的 **Settings → Domains & Routes** 页面看到），中间一段是账号注册时自动分配的子域名。
 
 ### 两种链接格式
 
 | 格式 | 写法 | 说明 |
 |---|---|---|
-| 域名前缀式 | `https://你的worker.workers.dev/github.com/user/repo/...` | 推荐，直观 |
-| 完整 URL 式 | `https://你的worker.workers.dev/https://github.com/user/repo/...` | 整条链接直接拼 |
+| 域名前缀式 | `https://gh-proxy-lite.你的子域名.workers.dev/github.com/user/repo/...` | 推荐，直观 |
+| 完整 URL 式 | `https://gh-proxy-lite.你的子域名.workers.dev/https://github.com/user/repo/...` | 整条链接直接拼 |
 
 ### 常用示例
 
 ```bash
 # Release 下载（wget / curl）
-wget https://你的worker.workers.dev/github.com/user/repo/releases/download/v1.0/app.zip
+wget https://gh-proxy-lite.你的子域名.workers.dev/github.com/user/repo/releases/download/v1.0/app.zip
 
 # Raw 文件
-curl -O https://你的worker.workers.dev/raw.githubusercontent.com/user/repo/main/config.json
+curl -O https://gh-proxy-lite.你的子域名.workers.dev/raw.githubusercontent.com/user/repo/main/config.json
 
 # git clone 加速
-git clone https://你的worker.workers.dev/github.com/user/repo.git
+git clone https://gh-proxy-lite.你的子域名.workers.dev/github.com/user/repo.git
 ```
 
 也可以直接打开 Worker 首页，粘贴链接在线转换（首页支持中英切换和深浅色主题）。

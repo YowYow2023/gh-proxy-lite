@@ -29,35 +29,41 @@ A lightweight GitHub acceleration proxy — a single-file Cloudflare Worker.
 
 ## ✋ Manual Deploy (No Button)
 
-1. Log in at [dash.cloudflare.com](https://dash.cloudflare.com)
-2. In the left sidebar, find the **Compute & AI** group → **Workers & Pages**
-3. Click **Create application** (top right) and pick the **Create Worker** card
-4. Change the name (e.g. `gh-proxy-lite`) → click **Deploy**
-5. Once deployed, click **Edit Code**
-6. Delete the default code and paste the entire contents of [`index.js`](index.js) from this repo
-7. Click **Deploy** (top right)
-8. Open `https://<your-worker>.workers.dev` — seeing the homepage means it works
+> Browser only, about 3 minutes; a free account is enough, no credit card needed.
+
+1. Sign up / log in at [dash.cloudflare.com](https://dash.cloudflare.com)
+2. In the left sidebar, click **Workers & Pages** (it sits under the **Compute & AI** group; the newest dashboard may label the group **Compute (Workers)** — same place; if you can't find it, just open the [official direct link](https://dash.cloudflare.com/?to=/:account/workers-and-pages))
+3. Click **Create application** (top right) → you'll see 5 options: **Connect GitHub**, **Connect GitLab**, **Start with Hello World**, **Select a template**, **Upload your static files** — pick **Start with Hello World** (it just creates a bare Worker with default code, which we'll replace entirely in the next step); if your dashboard still shows the older **Create Worker** card, click that instead
+4. On the naming screen, replace the random default name (like `bold-leaf-1234`) with something memorable (e.g. `gh-proxy-lite`) → click **Deploy**
+5. Once deployed, click **Edit Code** to open the editor; if you don't see the button, go back to the Workers & Pages list, click your Worker's name, then click **Edit Code** (top right)
+6. In the editor, select all the default code (`Ctrl+A`, or `Cmd+A` on Mac) and delete it
+7. Open [`index.js`](index.js) in this repo and click the **Copy raw contents** icon next to the **Raw** button (top right of the file view) to copy everything — or click **Raw**, then `Ctrl+A` → `Ctrl+C` — and paste it into the editor
+8. Click **Deploy** (top right) and wait for the success message (if a confirmation dialog pops up, just click **Deploy** once more)
+9. Go back to the Workers & Pages list, click your Worker's name → **Settings → Domains & Routes** — you'll see your dedicated URL, like `https://gh-proxy-lite.your-subdomain.workers.dev` (the middle part is the subdomain auto-assigned to your account, so the address is *not* just `workers.dev`)
+10. Open it in a browser — seeing this project's homepage means it works 🎉
 
 ## 📖 Usage
+
+> The examples use `https://gh-proxy-lite.your-subdomain.workers.dev` as a stand-in for your proxy address. Replace it with your own full URL (like `https://gh-proxy-lite.abc123.workers.dev` — visible in **Settings → Domains & Routes** on your Worker's page; the middle part is the subdomain auto-assigned to your account).
 
 ### Two URL formats
 
 | Format | Pattern | Note |
 |---|---|---|
-| Domain-prefix | `https://your-worker.workers.dev/github.com/user/repo/...` | Recommended |
-| Full-URL | `https://your-worker.workers.dev/https://github.com/user/repo/...` | Just prepend the worker URL |
+| Domain-prefix | `https://gh-proxy-lite.your-subdomain.workers.dev/github.com/user/repo/...` | Recommended |
+| Full-URL | `https://gh-proxy-lite.your-subdomain.workers.dev/https://github.com/user/repo/...` | Just prepend the worker URL |
 
 ### Examples
 
 ```bash
 # Release downloads (wget / curl)
-wget https://your-worker.workers.dev/github.com/user/repo/releases/download/v1.0/app.zip
+wget https://gh-proxy-lite.your-subdomain.workers.dev/github.com/user/repo/releases/download/v1.0/app.zip
 
 # Raw files
-curl -O https://your-worker.workers.dev/raw.githubusercontent.com/user/repo/main/config.json
+curl -O https://gh-proxy-lite.your-subdomain.workers.dev/raw.githubusercontent.com/user/repo/main/config.json
 
 # Faster git clone
-git clone https://your-worker.workers.dev/github.com/user/repo.git
+git clone https://gh-proxy-lite.your-subdomain.workers.dev/github.com/user/repo.git
 ```
 
 Or open the Worker homepage and use the built-in converter (supports Chinese/English and light/dark themes).
