@@ -5,7 +5,7 @@
 轻量的 GitHub 加速代理 —— 单文件 Cloudflare Worker。
 **零配置、零绑定、零构建**，复制粘贴即可部署，代码约 190 行，小白也能读懂、能改。
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/YOUR_GITHUB_USERNAME/gh-proxy-lite)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/YowYow2023/gh-proxy-lite)
 
 ## ✨ 特性
 

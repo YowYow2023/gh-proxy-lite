@@ -5,7 +5,7 @@ English | [中文](README.md)
 A lightweight GitHub acceleration proxy — a single-file Cloudflare Worker.
 **Zero config, zero bindings, zero build step.** Deploy by copy & paste; ~190 lines of readable code you can actually tweak.
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/YOUR_GITHUB_USERNAME/gh-proxy-lite)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/YowYow2023/gh-proxy-lite)
 
 ## ✨ Features
 
