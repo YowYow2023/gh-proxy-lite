@@ -179,7 +179,7 @@ function homePage(workerUrl) {
     .proxy-prefix { color: var(--proxy-color); font-weight: 700; }
     .url-input { display: flex; gap: 8px; margin-top: 12px; }
     .url-input input {
-      flex: 1; padding: 10px 14px; border: 2px solid var(--input-border); border-radius: 8px;
+      flex: 1; min-width: 0; padding: 10px 14px; border: 2px solid var(--input-border); border-radius: 8px;
       font-size: 14px; outline: none; background: var(--container-bg); color: var(--text-main);
     }
     .url-input input:focus { border-color: var(--accent); }
@@ -188,6 +188,13 @@ function homePage(workerUrl) {
       border-radius: 8px; cursor: pointer; font-size: 14px; white-space: nowrap;
     }
     .url-input button:hover { background: var(--accent-hover); }
+    /* 窄屏：输入框与按钮改为上下堆叠，避免溢出卡片；16px 防止 iOS 聚焦自动放大 */
+    @media (max-width: 480px) {
+      .container { padding: 24px 20px; }
+      .url-input { flex-direction: column; }
+      .url-input input { font-size: 16px; }
+      .url-input button { width: 100%; }
+    }
     .result { margin-top: 12px; padding: 12px; background: var(--result-bg); border-radius: 8px; display: none; word-break: break-all; font-size: 14px; }
     .result a { color: var(--link); }
     ul { padding-left: 20px; color: var(--text-sub); font-size: 14px; line-height: 2; }
