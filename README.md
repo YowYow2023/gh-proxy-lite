@@ -31,15 +31,16 @@
 
 1. 点击本仓库右上角 **Fork**，将仓库复制一份到你自己的 GitHub 账号下
 2. 登录 [Cloudflare 控制台](https://dash.cloudflare.com)
-3. 在左侧菜单点击 **Workers & Pages**（新版可能显示为 **Compute (Workers)**）
-4. 点右上角 **Create application（创建应用程序）** → 选择 **Pages** 选项卡（或点击 **Connect to Git**）
-5. 选择 **GitHub** 并授权，选中你刚 Fork 的 `gh-proxy-lite` 仓库，点击 **Begin setup（开始设置）**
-6. 设置构建选项（非常简单）：
+3. 在左侧菜单展开 **Compute（计算）** 折叠菜单，点击 **Workers & Pages**
+4. 点右上角 **Create application（创建应用程序）**
+5. ⚠️ **注意 Pages 入口**：在创建页面向下滚动到底部，找到并点击 **“继续前往 Pages（Continue to Pages）”**，再选择 **Connect to Git（连接到 Git）**
+6. 选择 **GitHub** 并授权，选中你刚 Fork 的 `gh-proxy-lite` 仓库，点击 **Begin setup（开始设置）**
+7. 设置构建选项（非常简单）：
    - **Project name（项目名称）**：填入你喜欢的名字（例如 `gh-proxy-lite`）
    - **Framework preset（框架预设）**：保持 `None`
    - **Build command（构建命令）**：**留空**（无需构建）
    - **Build output directory（构建输出目录）**：填入 **`cloudflare-pages`**
-7. 点击 **Save and Deploy（保存并部署）**，约 1 分钟后即可获得专属 `https://你的项目名.pages.dev` 链接 🎉
+8. 点击 **Save and Deploy（保存并部署）**，约 1 分钟后即可获得专属 `https://你的项目名.pages.dev` 链接 🎉
 
 ---
 
@@ -60,7 +61,7 @@
 > 只需浏览器，全程约 3 分钟；免费账号即可，无需信用卡。
 
 1. 注册并登录 [Cloudflare 控制台](https://dash.cloudflare.com)
-2. 在左侧菜单点击 **Workers & Pages**（入口位于 **Compute & AI** 分组下；新版控制台可能改叫 **Compute (Workers)**，是同一个地方；实在找不到就直接打开[官方直达链接](https://dash.cloudflare.com/?to=/:account/workers-and-pages)）
+2. 在左侧菜单展开 **Compute（计算）** 折叠菜单，点击 **Workers & Pages**（实在找不到就直接打开[官方直达链接](https://dash.cloudflare.com/?to=/:account/workers-and-pages)）
 3. 点右上角 **Create application（创建应用程序）** → 选 **Start with Hello World**（即创建一个带默认代码的空白 Worker，下一步把代码整个换成我们的）；如果看到旧版的 **Create Worker** 卡片，直接点击即可
 4. 在命名页把默认的随机名（形如 `bold-leaf-1234`）改成好记的名字（例如 `gh-proxy-lite`）→ 点击 **Deploy（部署）**
 5. 部署完成后点击 **Edit Code（编辑代码）** 进入编辑器；若没看到该按钮，回到 Workers & Pages 列表，点你的 Worker 名进入，再点右上角 **Edit Code**

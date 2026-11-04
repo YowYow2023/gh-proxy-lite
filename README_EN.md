@@ -31,15 +31,16 @@ This project offers two deployment approaches to choose from:
 
 1. Click **Fork** at the top right of this repository to copy it to your own GitHub account
 2. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com)
-3. In the left sidebar, click **Workers & Pages** (may appear as **Compute (Workers)** on newer dashboards)
-4. Click **Create application** (top right) → switch to the **Pages** tab (or click **Connect to Git**)
-5. Select **GitHub**, authorize, select your forked `gh-proxy-lite` repository, and click **Begin setup**
-6. Configure the build settings (minimal & straightforward):
+3. In the left sidebar, expand the **Compute** menu and click **Workers & Pages**
+4. Click **Create application** (top right)
+5. ⚠️ **Locate the Pages option**: Scroll down to the bottom of the creation page, find and click **"Looking for Pages? Continue to Pages"**, then select **Connect to Git**
+6. Select **GitHub**, authorize, select your forked `gh-proxy-lite` repository, and click **Begin setup**
+7. Configure the build settings (minimal & straightforward):
    - **Project name**: choose your desired name (e.g. `gh-proxy-lite`)
    - **Framework preset**: keep `None`
    - **Build command**: **Leave empty** (no build command needed)
    - **Build output directory**: Enter **`cloudflare-pages`**
-7. Click **Save and Deploy**. In about a minute, your dedicated `https://your-project.pages.dev` URL is live 🎉
+8. Click **Save and Deploy**. In about a minute, your dedicated `https://your-project.pages.dev` URL is live 🎉
 
 ---
 
@@ -60,7 +61,7 @@ This project offers two deployment approaches to choose from:
 > Browser only, about 3 minutes; a free account is enough, no credit card needed.
 
 1. Sign up / log in at [dash.cloudflare.com](https://dash.cloudflare.com)
-2. In the left sidebar, click **Workers & Pages** (under **Compute & AI** or **Compute (Workers)**; or use the [official direct link](https://dash.cloudflare.com/?to=/:account/workers-and-pages))
+2. In the left sidebar, expand the **Compute** menu and click **Workers & Pages** (or use the [official direct link](https://dash.cloudflare.com/?to=/:account/workers-and-pages))
 3. Click **Create application** (top right) → select **Start with Hello World** (creates a bare Worker with template code to be replaced)
 4. Replace the random default name (like `bold-leaf-1234`) with something memorable (e.g. `gh-proxy-lite`) → click **Deploy**
 5. Once deployed, click **Edit Code** to open the editor; if not visible, return to the Workers & Pages list, click your Worker, then click **Edit Code**
