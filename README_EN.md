@@ -35,6 +35,7 @@ This project offers two deployment approaches to choose from:
 4. Click **Create application** (top right)
 5. ⚠️ **Locate the Pages option**: Scroll down to the bottom of the creation page, find and click **"Looking for Pages? Continue to Pages"**, then select **"Import an existing Git repository"**
 6. Select **GitHub**, authorize, select your forked `gh-proxy-lite` repository, and click **Begin setup**
+   > 💡 **Can't find the repository?** This means the GitHub App wasn't granted access to it yet. Go to GitHub profile icon → **Settings** → left sidebar under **Integrations** click **Applications** → switch to **Installed GitHub Apps** tab → find **Cloudflare Workers and Pages** and click **Configure** → under **Repository access**, choose **Select repositories** to add `gh-proxy-lite` and click **Save**. Then return to Cloudflare and refresh.
 7. Configure the build settings (minimal & straightforward):
    - **Project name**: choose your desired name (e.g. `gh-proxy-lite`)
    - **Framework preset**: keep `None`

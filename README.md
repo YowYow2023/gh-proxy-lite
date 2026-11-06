@@ -35,6 +35,7 @@
 4. 点右上角 **Create application（创建应用程序）**
 5. ⚠️ **注意 Pages 入口**：在创建页面向下滚动到底部，找到并点击 **“继续前往 Pages（Continue to Pages）”**，再选择 **“Import an existing Git repository（导入现有 Git 存储库）”**
 6. 选择 **GitHub** 并授权，选中你刚 Fork 的 `gh-proxy-lite` 仓库，点击 **Begin setup（开始设置）**
+   > 💡 **找不到仓库？** 说明之前授权 GitHub 时未包含该仓库。进入 GitHub 右上角头像 **Settings** → 左侧 **Integrations** 下点击 **Applications** → 切换到 **Installed GitHub Apps** 标签页 → 找到 **Cloudflare Workers and Pages** 点击 **Configure** → 在 **Repository access** 处选择 **Select repositories** 勾选添加 `gh-proxy-lite` 仓库并保存，然后返回 Cloudflare 刷新列表即可。
 7. 设置构建选项（非常简单）：
    - **Project name（项目名称）**：填入你喜欢的名字（例如 `gh-proxy-lite`）
    - **Framework preset（框架预设）**：保持 `None`
